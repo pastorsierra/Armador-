@@ -1,4 +1,4 @@
-const V="ar-80e0fec4";
+const V="ar-97737c79";
 const CORE=["./","index.html","shim.js","docx.js","rv1909.json","biblioteca.json","biblioteca-nueva.json","manifest.webmanifest","icon-192.png","icon-512.png","apple-touch-icon.png"];
 self.addEventListener("install",e=>{e.waitUntil(caches.open(V).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting()))});
 self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k.startsWith("ar-")&&k!==V).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
