@@ -1,4 +1,4 @@
-const V="ar-a7de868e";
+const V="ar-fab20833";
 const CORE=["./", "apple-touch-icon.png", "biblioteca-nueva.enc", "biblioteca.enc", "docx.js", "icon-192.png", "icon-512.png", "index.html", "libcrypt.js", "lugares.json", "manifest.webmanifest", "mapa.json", "rv1909.json", "xref.json", "shim.js"];
 self.addEventListener("install",e=>{e.waitUntil(caches.open(V).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting()))});
 self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k.startsWith("ar-")&&k!==V).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
